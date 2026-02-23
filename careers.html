@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Our Team — 6igma Group</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── HERO ── */
+.careers-hero {
+  min-height: 70vh;
+  display: flex; align-items: flex-end;
+  padding: 10rem 0 5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.careers-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 100% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 0% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+}
+.careers-hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 80%);
+}
+.careers-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: end; width: 100%;
+}
+.careers-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  line-height: 0.9; letter-spacing: 0.02em;
+  color: var(--white); margin-bottom: 0;
+}
+.careers-hero-title span { color: var(--gold); display: block; }
+.careers-hero-right { padding-bottom: 0.5rem; }
+.careers-hero-sub {
+  font-size: 1.05rem; color: var(--muted);
+  line-height: 1.85; margin-bottom: 2.5rem;
+}
+
+/* ── ETHOS STRIP ── */
+.ethos-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid var(--border);
+}
+.ethos-item {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+.ethos-word {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; color: var(--gold);
+  line-height: 1; display: block; margin-bottom: 0.5rem;
+}
+.ethos-def {
+  font-size: 0.85rem; color: var(--muted); line-height: 1.65;
+}
+
+/* ── ROLES ── */
+.roles-section { padding: 6rem 0; }
+.roles-intro {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: end; margin-bottom: 4rem;
+}
+.roles-intro-right p { font-size: 1rem; color: var(--muted); line-height: 1.85; }
+
+/* Role cards */
+.roles-grid {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border);
+}
+
+.role-card {
+  background: var(--black);
+  padding: 3rem;
+  position: relative; overflow: hidden;
+  transition: background 0.25s;
+}
+.role-card:hover { background: var(--steel); }
+.role-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.role-card:hover::before { transform: scaleX(1); }
+
+.role-card-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 2rem;
+}
+.role-icon {
+  width: 52px; height: 52px;
+  background: var(--gold-dim);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.role-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.role-type {
+  font-family: 'Syne', sans-serif; font-size: 0.62rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  align-self: flex-start;
+}
+.role-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; letter-spacing: 0.04em;
+  color: var(--white); line-height: 1;
+  margin-bottom: 0.6rem; display: block;
+}
+.role-subtitle {
+  font-family: 'Syne', sans-serif; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.2rem; display: block;
+}
+.role-desc {
+  font-size: 0.92rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: 2rem;
+}
+.role-looking {
+  margin-bottom: 2rem;
+}
+.role-looking-title {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.8rem; display: block;
+}
+.role-traits {
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.role-trait {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  font-size: 0.85rem; color: var(--text); line-height: 1.5;
+}
+.role-trait::before {
+  content: '—';
+  color: var(--gold); flex-shrink: 0;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.role-apply {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Syne', sans-serif; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  transition: gap 0.2s;
+  cursor: pointer;
+}
+.role-card:hover .role-apply { gap: 0.9rem; }
+.role-apply::after { content: '→'; }
+
+/* ── OPEN CALL ── */
+.open-call {
+  background: var(--steel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 0;
+}
+.open-call-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.open-call-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--white); line-height: 1;
+  letter-spacing: 0.03em; margin-bottom: 1.5rem;
+}
+.open-call-left h2 span { color: var(--gold); }
+.open-call-left p { font-size: 1rem; color: var(--muted); line-height: 1.85; }
+.open-call-right { display: flex; flex-direction: column; gap: 0; }
+.open-call-item {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 1.4rem 0; border-bottom: 1px solid var(--border);
+}
+.open-call-item:last-child { border-bottom: none; }
+.open-call-check {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: var(--gold-dim); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.open-call-check svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2.5; }
+.open-call-text { font-size: 0.92rem; color: var(--text); line-height: 1.5; }
+
+/* ── APPLY SECTION ── */
+.apply-section { padding: 6rem 0; }
+.apply-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+.apply-left h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--white); line-height: 1;
+  letter-spacing: 0.03em; margin-bottom: 1.5rem;
+}
+.apply-left h2 span { color: var(--gold); }
+.apply-left p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 2rem; }
+
+.apply-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-field label {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold);
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: var(--steel); border: 1px solid var(--border);
+  color: var(--text); font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; padding: 0.8rem 1rem; outline: none;
+  transition: border-color 0.2s; -webkit-appearance: none; width: 100%;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus { border-color: var(--gold); }
+.form-field select option { background: var(--steel); }
+.form-field textarea { min-height: 120px; resize: vertical; }
+
+.file-upload {
+  background: var(--steel); border: 1px dashed rgba(201,168,76,0.3);
+  padding: 2rem; text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.file-upload:hover { border-color: var(--gold); background: var(--gold-dim); }
+.file-upload-label {
+  font-family: 'Syne', sans-serif; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 0.3rem;
+}
+.file-upload-sub { font-size: 0.8rem; color: var(--muted); }
+.file-upload input[type="file"] { display: none; }
+
+@media (max-width: 900px) {
+  .careers-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ethos-strip { grid-template-columns: repeat(2,1fr); }
+  .roles-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .roles-grid { grid-template-columns: 1fr; }
+  .open-call-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .apply-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#companies">Companies</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="careers.html" class="active">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="#apply" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="careers-hero">
+  <div class="careers-hero-bg"></div>
+  <div class="careers-hero-grid"></div>
+  <div class="careers-hero-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1.4rem;">Join Our Team</p>
+      <h1 class="careers-hero-title">
+        Build<br>Something<br><span>That Matters.</span>
+      </h1>
+    </div>
+    <div class="careers-hero-right fade-up" style="transition-delay:0.15s;">
+      <p class="careers-hero-sub">We are not looking for people who fit into boxes. We are looking for people who build new ones. At 6igma Group, we are assembling a team of extraordinary individuals — creative minds, relentless problem-solvers, and domain experts — who want to leave a real mark on healthcare, cybersecurity, and beyond.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#roles" class="btn btn-gold">See Open Roles</a>
+        <a href="#apply" class="btn btn-outline">Send Your Application</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ETHOS ── -->
+<div class="ethos-strip fade-up">
+  <div class="ethos-item">
+    <span class="ethos-word">Bold</span>
+    <p class="ethos-def">We take on problems others consider too hard, too complex, or too early. Comfort is not our operating mode.</p>
+  </div>
+  <div class="ethos-item">
+    <span class="ethos-word">Rigorous</span>
+    <p class="ethos-def">We hold every idea to the Six Sigma standard. Good enough is never good enough. We build things that last.</p>
+  </div>
+  <div class="ethos-item">
+    <span class="ethos-word">Resourceful</span>
+    <p class="ethos-def">We find a way. With what we have, where we are. Constraints are a design brief, not an excuse.</p>
+  </div>
+  <div class="ethos-item">
+    <span class="ethos-word">Purposeful</span>
+    <p class="ethos-def">Every product, every role, every decision maps back to real impact — for patients, organizations, and communities.</p>
+  </div>
+</div>
+
+<!-- ── ROLES ── -->
+<section class="roles-section" id="roles">
+  <div class="roles-intro">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Open Roles</p>
+      <h2 class="h2">We're Looking<br>for Exceptional<br>People.</h2>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s;">
+      <p>We are building across four companies simultaneously — in health tech, cybersecurity, risk intelligence, and consulting. That means we need extraordinary people across every function: the engineers who architect the future, the marketers who make it land, the lawyers who protect it, and the finance minds who scale it.</p>
+    </div>
+  </div>
+
+  <div class="roles-grid">
+
+    <!-- Engineering -->
+    <div class="role-card fade-up">
+      <div class="role-card-header">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span class="role-type">Engineering</span>
+      </div>
+      <span class="role-title">Creative Engineers</span>
+      <span class="role-subtitle">Software · Mobile · Platform · AI</span>
+      <p class="role-desc">We need engineers who don't just write code — they architect solutions, question assumptions, and build products that are genuinely elegant. You will work across our health apps (FODO, LAFIAKALO, Dialysis Flow), our cyber risk platforms (CyberRisk Architecture OS, CRAM Terminals), and whatever we dream up next.</p>
+      <div class="role-looking">
+        <span class="role-looking-title">You might be our person if you…</span>
+        <div class="role-traits">
+          <div class="role-trait">Get excited by hard, undefined problems — not just well-scoped tickets</div>
+          <div class="role-trait">Have built something from scratch and shipped it to real users</div>
+          <div class="role-trait">Think about UX, architecture, and business impact simultaneously</div>
+          <div class="role-trait">Can work across mobile, web, or backend — and learn what you don't know</div>
+          <div class="role-trait">Bring creativity to technical design, not just technical correctness</div>
+        </div>
+      </div>
+      <a href="#apply" class="role-apply">Apply for Engineering</a>
+    </div>
+
+    <!-- Sales & Marketing -->
+    <div class="role-card fade-up" style="transition-delay:0.1s;">
+      <div class="role-card-header">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span class="role-type">Sales & Marketing</span>
+      </div>
+      <span class="role-title">Resourceful Sales & Marketing Geniuses</span>
+      <span class="role-subtitle">Growth · Brand · GTM · Partnerships</span>
+      <p class="role-desc">We are building genuinely new categories — a credit score for cyber risk, a Bloomberg terminal for security professionals, holistic wellness apps. That means we need marketers and sellers who can make people understand and want things they've never seen before. Part storyteller, part strategist, part relentless executor.</p>
+      <div class="role-looking">
+        <span class="role-looking-title">You might be our person if you…</span>
+        <div class="role-traits">
+          <div class="role-trait">Can explain complex B2B and B2C products to completely different audiences</div>
+          <div class="role-trait">Have driven real pipeline or growth — not just impressions and clicks</div>
+          <div class="role-trait">Are as comfortable in a boardroom pitch as writing copy at midnight</div>
+          <div class="role-trait">Understand positioning, narrative, and the difference between noise and signal</div>
+          <div class="role-trait">Love the hunt — and know how to close with integrity</div>
+        </div>
+      </div>
+      <a href="#apply" class="role-apply">Apply for Sales & Marketing</a>
+    </div>
+
+    <!-- Legal -->
+    <div class="role-card fade-up" style="transition-delay:0.15s;">
+      <div class="role-card-header">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span class="role-type">Legal</span>
+      </div>
+      <span class="role-title">Legal Counsel</span>
+      <span class="role-subtitle">Corporate · Regulatory · IP · Compliance</span>
+      <p class="role-desc">Across healthcare apps, a cybersecurity platform, a financial-data-style terminal, and a consulting practice, we navigate a complex web of regulation, intellectual property, and commercial agreements. We need legal counsel who is sharp, practical, and genuinely embedded in the business — not a distant risk-averse gatekeeper, but a strategic partner.</p>
+      <div class="role-looking">
+        <span class="role-looking-title">You might be our person if you…</span>
+        <div class="role-traits">
+          <div class="role-trait">Have experience with health tech (HIPAA), cybersecurity regulation, or SaaS contracting</div>
+          <div class="role-trait">Know how to protect IP while moving fast — not slow everything down</div>
+          <div class="role-trait">Can draft, negotiate, and advise across corporate, commercial, and regulatory domains</div>
+          <div class="role-trait">Speak business, not just legalese — and earn trust across the leadership team</div>
+          <div class="role-trait">Are energized by novel legal questions, not just template application</div>
+        </div>
+      </div>
+      <a href="#apply" class="role-apply">Apply for Legal</a>
+    </div>
+
+    <!-- Finance -->
+    <div class="role-card fade-up" style="transition-delay:0.2s;">
+      <div class="role-card-header">
+        <div class="role-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <span class="role-type">Finance</span>
+      </div>
+      <span class="role-title">Finance Guru</span>
+      <span class="role-subtitle">Strategy · FP&A · Fundraising · Operations</span>
+      <p class="role-desc">We are scaling multiple companies under one group structure — each with its own economics, revenue model, and growth trajectory. We need a finance leader who can hold the full picture: building the models, controlling the cash, telling the story to investors, and making sure every dollar is working as hard as we are.</p>
+      <div class="role-looking">
+        <span class="role-looking-title">You might be our person if you…</span>
+        <div class="role-traits">
+          <div class="role-trait">Have built financial models for SaaS, health tech, or multi-entity companies</div>
+          <div class="role-trait">Have experience with startup fundraising — decks, diligence, term sheets</div>
+          <div class="role-trait">Can do the analysis and explain it clearly to a non-finance executive team</div>
+          <div class="role-trait">Bring structure and discipline without bureaucracy or friction</div>
+          <div class="role-trait">Are excited by the challenge of scaling multiple P&Ls simultaneously</div>
+        </div>
+      </div>
+      <a href="#apply" class="role-apply">Apply for Finance</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── OPEN CALL ── -->
+<div class="open-call">
+  <div class="open-call-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1.2rem;">Don't See Your Role?</p>
+      <h2>We Hire for <span>Extraordinary</span> — Not Just Open Reqs.</h2>
+      <p style="margin-top:1.5rem;">If you are exceptional at what you do and believe in what we are building, we want to hear from you. We are always open to the right person — even when there's no posted job for them yet.</p>
+    </div>
+    <div class="open-call-right fade-up" style="transition-delay:0.1s;">
+      <div class="open-call-item">
+        <div class="open-call-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></div>
+        <p class="open-call-text">Remote-friendly — we care about impact, not zip codes</p>
+      </div>
+      <div class="open-call-item">
+        <div class="open-call-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></div>
+        <p class="open-call-text">Work across multiple companies and products from day one</p>
+      </div>
+      <div class="open-call-item">
+        <div class="open-call-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></div>
+        <p class="open-call-text">Direct access to founder leadership — no layers, no politics</p>
+      </div>
+      <div class="open-call-item">
+        <div class="open-call-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></div>
+        <p class="open-call-text">Equity and growth paths as we scale across the group</p>
+      </div>
+      <div class="open-call-item">
+        <div class="open-call-check"><svg viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg></div>
+        <p class="open-call-text">Mission-driven work with measurable real-world impact</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── APPLY ── -->
+<section class="apply-section" id="apply">
+  <div class="apply-inner">
+    <div class="apply-left fade-up">
+      <p class="label" style="margin-bottom:1.2rem;">Apply</p>
+      <h2>Ready to <span>Build</span><br>With Us?</h2>
+      <p>Send us your application. Tell us what you do, what you've built, and why 6igma Group. We read every submission personally — no black hole, no automated rejection. The right people always hear back from us.</p>
+      <div style="margin-top:2rem;padding:2rem;background:var(--steel);border:1px solid var(--border);">
+        <p class="label" style="margin-bottom:1rem;">Or email us directly</p>
+        <a href="/cdn-cgi/l/email-protection#d8bbb9aabdbdaaab98eeb1bfb5b9f6bbb7b5" style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--gold);text-decoration:none;display:block;margin-bottom:0.5rem;"><span class="__cf_email__" data-cfemail="137072617676616053257a747e723d707c7e">[email&#160;protected]</span></a>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.65;">Include your role of interest, a brief intro, and anything you're proud of. A polished CV is welcome but never required — show us your work.</p>
+      </div>
+    </div>
+    <form class="apply-form fade-up" style="transition-delay:0.15s;" onsubmit="handleApply(event)">
+      <div class="form-row">
+        <div class="form-field"><label>First Name</label><input type="text" placeholder="Jane" required></div>
+        <div class="form-field"><label>Last Name</label><input type="text" placeholder="Doe" required></div>
+      </div>
+      <div class="form-field"><label>Email Address</label><input type="email" placeholder="jane@example.com" required></div>
+      <div class="form-field"><label>Role of Interest</label>
+        <select required>
+          <option value="">Select a role...</option>
+          <option>Creative Engineer — Software / Mobile</option>
+          <option>Creative Engineer — Platform / AI</option>
+          <option>Sales & Marketing</option>
+          <option>Legal Counsel</option>
+          <option>Finance</option>
+          <option>Other — I'll explain below</option>
+        </select>
+      </div>
+      <div class="form-field"><label>LinkedIn or Portfolio URL</label><input type="url" placeholder="https://"></div>
+      <div class="form-field">
+        <label>Why 6igma Group? What have you built?</label>
+        <textarea placeholder="Tell us about yourself, what you've built or achieved, and why you want to work here. Be real — we prefer honest over polished." required></textarea>
+      </div>
+      <label class="file-upload">
+        <input type="file" accept=".pdf,.doc,.docx">
+        <span class="file-upload-label">Attach CV / Resume (optional)</span>
+        <span class="file-upload-sub">PDF or Word · Max 10MB</span>
+      </label>
+      <button type="submit" class="btn btn-gold" style="align-self:flex-start;padding:1rem 2.5rem;">Submit Application</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">6igma<span> Group</span></a>
+  <ul class="footer-links">
+    <li><a href="6igma-health.html">6igma Health</a></li>
+    <li><a href="6igma-associates.html">6igma Associates</a></li>
+    <li><a href="cyberrisk-os.html">Cyber Risk OS</a></li>
+    <li><a href="cram-terminals.html">CRAM Terminals</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // File upload label update
+  document.querySelector('.file-upload input[type="file"]').addEventListener('change', function() {
+    const label = this.closest('.file-upload').querySelector('.file-upload-label');
+    label.textContent = this.files[0] ? this.files[0].name : 'Attach CV / Resume (optional)';
+  });
+
+  function handleApply(e) {
+    e.preventDefault()

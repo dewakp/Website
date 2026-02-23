@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Wole Akpose — 6igma Group</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── HERO ── */
+.about-hero {
+  padding: 10rem 0 6rem;
+  border-bottom: 1px solid var(--border);
+}
+.about-hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 6rem;
+  align-items: end;
+}
+
+/* Photo */
+.photo-block {
+  display: flex; flex-direction: column; gap: 0;
+}
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--steel);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.photo-frame img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+  display: block;
+}
+.photo-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; width: 100%; height: 100%;
+}
+.photo-placeholder-icon {
+  width: 80px; height: 80px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.photo-placeholder-icon svg { width: 40px; height: 40px; stroke: var(--muted); fill: none; stroke-width: 1.5; }
+.photo-placeholder-label {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+.photo-caption {
+  background: var(--steel);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 1.4rem 1.6rem;
+}
+.photo-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem; letter-spacing: 0.06em;
+  color: var(--white); line-height: 1; display: block;
+  margin-bottom: 0.3rem;
+}
+.photo-role {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Hero right */
+.about-hero-right {}
+.breadcrumb {
+  font-family: 'Syne', sans-serif; font-size: 0.68rem;
+  font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+.about-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.92; letter-spacing: 0.02em;
+  color: var(--white); margin-bottom: 2rem;
+}
+.about-intro {
+  font-size: 1.05rem; color: var(--muted); line-height: 1.85;
+  max-width: 520px; margin-bottom: 2.5rem;
+}
+
+/* Credential badges row */
+.cred-row {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+}
+
+/* ── SECTIONS ── */
+.bio-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.bio-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 5rem; align-items: start;
+}
+.bio-sidebar {}
+.bio-sidebar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 0.04em;
+  color: var(--white); line-height: 1;
+}
+.bio-body { display: flex; flex-direction: column; gap: 2rem; }
+.bio-body p { font-size: 0.97rem; color: var(--muted); line-height: 1.85; }
+
+/* Timeline */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.15em;
+  color: var(--gold); padding-top: 0.1rem;
+}
+.timeline-content {}
+.timeline-role {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.92rem; font-weight: 800;
+  color: var(--white); margin-bottom: 0.25rem;
+}
+.timeline-org {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.5rem; display: block;
+}
+.timeline-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+/* Cert grid */
+.cert-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+}
+.cert-item {
+  background: var(--black); padding: 1.5rem 1.4rem;
+  transition: background 0.2s;
+}
+.cert-item:hover { background: var(--steel); }
+.cert-domain {
+  font-family: 'Syne', sans-serif; font-size: 0.6rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.4rem; display: block;
+}
+.cert-name {
+  font-family: 'Syne', sans-serif; font-size: 0.82rem;
+  font-weight: 700; color: var(--white); line-height: 1.4;
+}
+
+/* Service grid */
+.service-list {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border);
+}
+.service-list-item {
+  background: var(--black); padding: 1.8rem;
+  display: flex; gap: 1.2rem; align-items: start;
+  transition: background 0.2s;
+}
+.service-list-item:hover { background: var(--steel); }
+.service-list-item::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  flex-shrink: 0; margin-top: 0.45rem;
+}
+.service-list-text {}
+.service-list-title {
+  font-family: 'Syne', sans-serif; font-size: 0.88rem;
+  font-weight: 800; color: var(--white); margin-bottom: 0.3rem;
+}
+.service-list-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* Venture grid */
+.venture-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+}
+.venture-item {
+  background: var(--black); padding: 2rem 1.6rem;
+  transition: background 0.2s;
+}
+.venture-item:hover { background: var(--steel); }
+.venture-sector {
+  font-family: 'Syne', sans-serif; font-size: 0.6rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.5rem; display: block;
+}
+.venture-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+  letter-spacing: 0.04em; color: var(--white);
+  line-height: 1; margin-bottom: 0.5rem; display: block;
+}
+.venture-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* Quote pull */
+.pull-quote {
+  background: var(--steel);
+  border-left: 3px solid var(--gold);
+  padding: 2.5rem 3rem;
+  margin: 0;
+}
+.pull-quote-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  color: var(--white); line-height: 1.15;
+  letter-spacing: 0.03em;
+}
+.pull-quote-text span { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .about-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .photo-frame { aspect-ratio: 1/1; max-width: 280px; }
+  .bio-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-list { grid-template-columns: 1fr; }
+  .venture-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 80px 1fr; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#companies">Companies</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="about-hero">
+  <div class="about-hero-inner">
+
+    <!-- Photo -->
+    <div class="photo-block fade-up">
+      <div class="photo-frame">
+        <!-- Replace src below with your actual photo path -->
+        <!-- <img src="wole-akpose.jpg" alt="Dr. Wole Akpose"> -->
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <span class="photo-placeholder-label">Photo Coming Soon</span>
+        </div>
+      </div>
+      <div class="photo-caption">
+        <span class="photo-name">Dr. Wole Akpose</span>
+        <span class="photo-role">Founder & Group Chairman, 6igma Group</span>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="fade-up" style="transition-delay:0.15s;">
+      <div class="breadcrumb"><a href="index.html">6igma Group</a> / About</div>
+      <p class="label" style="margin-bottom:1.4rem;">Founder & Chairman</p>
+      <h1 class="about-headline">Builder.<br>Scholar.<br><span class="gold">Practitioner.</span></h1>
+      <p class="about-intro">Entrepreneur, engineer, educator, and executive — Dr. Wole Akpose has spent a career at the intersection of technology, leadership, and institution building. From founding companies straight out of college to authoring the EISSAF Framework across 7 volumes, he brings rare depth across the domains of cybersecurity, healthcare technology, consulting, and organizational excellence.</p>
+      <div class="cred-row">
+        <span class="pill">Doctor of Engineering</span>
+        <span class="pill">CISO / CSO</span>
+        <span class="pill">Enterprise Architect</span>
+        <span class="pill">CIO</span>
+        <span class="pill">Six Sigma</span>
+        <span class="pill">Baldrige Examiner</span>
+        <span class="pill">IEEE Leader</span>
+        <span class="pill">Author</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PULL QUOTE ── -->
+<div class="pull-quote fade-up">
+  <p class="pull-quote-text">"From founding my first company right out of college to building frameworks that redefine how the world measures <span>enterprise cyber risk</span> — every chapter has been about building things that matter."</p>
+</div>
+
+<!-- ── VENTURES & COMPANIES ── -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Entrepreneurship</p>
+      <h2 class="bio-sidebar-title">Companies<br>Built &<br>Led</h2>
+    </div>
+    <div class="bio-body fade-up" style="transition-delay:0.1s;">
+      <p>Dr. Akpose's entrepreneurial journey began immediately after college — founding his first company before most of his peers had their first jobs. Since then he has built and led companies across multiple high-impact sectors, bringing the same engineering rigor and strategic discipline to each venture.</p>
+      <div class="venture-grid">
+        <div class="venture-item">
+          <span class="venture-sector">Telecommunications</span>
+          <span class="venture-name">Network Services</span>
+          <p class="venture-desc">Founded and led a network services company delivering enterprise connectivity and infrastructure solutions.</p>
+        </div>
+        <div class="venture-item">
+          <span class="venture-sector">Professional Services</span>
+          <span class="venture-name">Enterprise Consulting</span>
+          <p class="venture-desc">Built an enterprise consulting practice advising organizations on strategy, technology, and operational transformation.</p>
+        </div>
+        <div class="venture-item">
+          <span class="venture-sector">Health Technology</span>
+          <span class="venture-name">Health Info Startup</span>
+          <p class="venture-desc">Founded a health information technology startup focused on improving clinical data management and patient outcomes.</p>
+        </div>
+        <div class="venture-item">
+          <span class="venture-sector">Cybersecurity</span>
+          <span class="venture-name">Cyber Security Startup</span>
+          <p class="venture-desc">Built a cybersecurity company delivering enterprise-grade security solutions and risk management services.</p>
+        </div>
+        <div class="venture-item">
+          <span class="venture-sector">Umbrella Group</span>
+          <span class="venture-name">6igma Group</span>
+          <p class="venture-desc">Founded 6igma Group as an umbrella organization uniting subsidiaries in health technology, consulting, cyber risk, and risk intelligence.</p>
+        </div>
+        <div class="venture-item" style="background:var(--steel);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1;">5+</span>
+          <span style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);">Companies Founded</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXECUTIVE ROLES ── -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Executive Leadership</p>
+      <h2 class="bio-sidebar-title">C-Suite &<br>Board<br>Roles</h2>
+    </div>
+    <div class="bio-body fade-up" style="transition-delay:0.1s;">
+      <p>With a career spanning large institutions and agile startups, Dr. Akpose has served at the highest levels of organizational leadership — bringing technical depth to executive roles that typically lack it, and strategic clarity to technical domains that often miss it.</p>
+      <div class="service-list">
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Chief Information Security Officer (CISO) / CSO</div>
+            <div class="service-list-sub">Enterprise-level security leadership — strategy, governance, risk, and compliance across large institutions.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Chief Information Officer (CIO)</div>
+            <div class="service-list-sub">Led enterprise IT strategy, transformation, and operations at large-scale organizations.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Enterprise Architect</div>
+            <div class="service-list-sub">Designed and governed enterprise-wide technology architectures aligned to strategic business objectives.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Board Member</div>
+            <div class="service-list-sub">Served on organizational boards providing governance oversight, strategic direction, and executive advisory.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Six Sigma Project Lead</div>
+            <div class="service-list-sub">Implemented enterprise-wide Six Sigma improvement projects — driving measurable quality and efficiency gains across large organizations.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Baldrige Performance Examiner</div>
+            <div class="service-list-sub">Served as a trained Baldrige Examiner, evaluating organizational performance excellence across leadership, strategy, customers, and results.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACADEMIA & SCHOLARSHIP ── -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Academia</p>
+      <h2 class="bio-sidebar-title">Scholar &<br>Educator</h2>
+    </div>
+    <div class="bio-body fade-up" style="transition-delay:0.1s;">
+      <p>Dr. Akpose holds a Doctor of Engineering degree and has contributed to the academic community as a teacher, author, journal reviewer, and conference committee member — translating decades of practice into structured knowledge for the next generation of engineers and security professionals.</p>
+      <div class="service-list">
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">College Instructor — Mathematics</div>
+            <div class="service-list-sub">Taught undergraduate mathematics, bridging rigorous quantitative thinking with real-world engineering application.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Graduate Instructor — Engineering</div>
+            <div class="service-list-sub">Delivered graduate-level engineering instruction, mentoring future practitioners in advanced technical disciplines.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Book & Journal Reviewer</div>
+            <div class="service-list-sub">Reviewed technical books and peer-reviewed journal articles, contributing to the quality and rigor of published scholarship.</div>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <div class="service-list-text">
+            <div class="service-list-title">Conference Committee Member</div>
+            <div class="service-list-sub">Served on multiple academic and professional conference committees, shaping the discourse of the field.</div>
+          </div>
+        </div>
+        <div class="service-list-item" style="grid-column: 1 / -1;">
+          <div class="service-list-text">
+            <div class="service-list-title">Author — MCRAM Series</div>
+            <div class="service-list-sub">Created the Modern Cyber Risk Analytics & Management (MCRAM) book series — 7 volumes, 53 chapters, 4,000+ pages — codifying the EISSAF Framework and EISSM Score methodology using MATLAB & Python. Available at cyberiskos.com.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMUNITY & VOLUNTEERING ── -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Service & Community</p>
+      <h2 class="bio-sidebar-title">Leadership<br>Beyond<br>Work</h2>
+    </div>
+    <div class="bio-body fade-up" style="transition-delay:0.1s;">
+      <p>Dr. Akpose has consistently given back to the professional and community organizations that shape the technology and engineering fields — serving in leadership and volunteer roles across IEEE, educational institutions, and professional societies.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">IEEE</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Chapter Leader & Volunteer</div>
+            <span class="timeline-org">IEEE Computer Society — Baltimore Chapter</span>
+            <p class="timeline-desc">Led and contributed to the IEEE Computer Society Baltimore Chapter, advancing the professional community of computing practitioners in the region.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">IEEE</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Volunteer Tools Administrator</div>
+            <span class="timeline-org">IEEE vTools</span>
+            <p class="timeline-desc">Supported IEEE's volunteer management and chapter operations tools, helping local sections and chapters run more effectively.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Education</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Organization Instructor</div>
+            <span class="timeline-org">Professional & Community Organizations</span>
+            <p class="timeline-desc">Delivered training and instruction within organizations, building capability and knowledge in technical and leadership domains.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Governance</div>
+          <div class="timeline-content">
+            <div class="timeline-role">Board Service</div>
+            <span class="timeline-org">Multiple Organizations</span>
+            <p class="timeline-desc">Served on the boards of multiple organizations providing governance leadership, strategic oversight, and institutional direction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section class="bio-section" style="border-bottom:none;">
+  <div class="bio-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Credentials</p>
+      <h2 class="bio-sidebar-title">Certifications<br>& Domains</h2>
+    </div>
+    <div class="bio-body fade-up" style="transition-delay:0.1s;">
+      <p>Dr. Akpose holds and has held a comprehensive portfolio of professional certifications spanning networking, security, systems administration, leadership, process engineering, IT governance, and more — reflecting a lifelong commitment to validated expertise across every domain he leads.</p>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <span class="cert-domain">Cybersecurity</span>
+          <div class="cert-name">Cybersecurity Leadership & Architecture</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Networking</span>
+          <div class="cert-name">Enterprise Networking & Infrastructure</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">IT Governance</span>
+          <div class="cert-name">IT Governance Frameworks (COBIT, ITIL)</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Process Engineering</span>
+          <div class="cert-name">Six Sigma Process Improvement</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Systems Administration</span>
+          <div class="cert-name">Enterprise Systems Administration</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Leadership</span>
+          <div class="cert-name">Organizational & Executive Leadership</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Performance Excellence</span>
+          <div class="cert-name">Baldrige Performance Examiner</div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-domain">Engineering</span>
+          <div class="cert-name">Doctor of Engineering (D.Eng.)</div>
+        </div>
+        <div class="cert-item" style="background:var(--steel);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1;">20+</span>
+          <span style="font-family:'Syne',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);">Certifications Held</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">6igma<span> Group</span></a>
+  <ul class="footer-links">
+    <li><a href="6igma-health.html">6igma Health</a></li>
+    <li><a href="6igma-associates.html">6igma Associates</a></li>
+    <li><a href="cyberrisk-os.html">Cyber Risk OS</a></li>
+    <li><a href="cram-terminals.html">CRAM Terminals</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

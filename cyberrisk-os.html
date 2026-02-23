@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberRisk Architecture OS — 6igma Group</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { padding: 10rem 0 6rem; border-bottom: 1px solid var(--border); }
+.page-hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: end;
+}
+.breadcrumb {
+  font-family: 'Syne', sans-serif; font-size: 0.68rem;
+  font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+
+.content-section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+.content-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 6rem; align-items: start;
+}
+.content-inner.centered {
+  grid-template-columns: 1fr;
+}
+
+/* score card */
+.score-card {
+  background: var(--steel);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  padding: 3rem;
+}
+.score-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6rem; line-height: 1; color: var(--gold);
+  display: block; margin: 0.8rem 0;
+}
+.score-label {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* eissaf framework */
+.framework-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+}
+.framework-dim {
+  background: var(--black); padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+.framework-dim:hover { background: var(--steel); }
+.framework-dim-label {
+  font-family: 'Syne', sans-serif; font-size: 0.62rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem; display: block;
+}
+.framework-dim-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem; line-height: 1;
+  color: var(--white); display: block; margin-bottom: 0.4rem;
+}
+.framework-dim-items {
+  font-size: 0.82rem; color: var(--muted); line-height: 1.65;
+}
+
+/* users */
+.users-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+}
+.user-item {
+  background: var(--black); padding: 2rem 1.8rem;
+  transition: background 0.2s;
+}
+.user-item:hover { background: var(--steel); }
+.user-title {
+  font-family: 'Syne', sans-serif; font-size: 0.92rem;
+  font-weight: 800; color: var(--white); margin-bottom: 0.5rem;
+}
+.user-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+
+.total-cell {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; color: var(--gold);
+  letter-spacing: 0.08em;
+  padding: 2rem;
+  background: var(--steel);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  margin-top: 1px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .content-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .framework-grid { grid-template-columns: repeat(2, 1fr); }
+  .users-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#companies">Companies</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.cyberriskarchitecture.com" target="_blank" class="nav-cta">Launch Platform</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="fade-up">
+      <div class="breadcrumb"><a href="index.html">6igma Group</a> / Cyber Risk OS</div>
+      <p class="label" style="margin-bottom:1.2rem;">Subsidiary 03</p>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);line-height:0.92;letter-spacing:0.02em;color:var(--white);">CyberRisk<br><span class="gold">Architecture</span><br>OS</h1>
+    </div>
+    <div class="fade-up" style="transition-delay:0.15s;">
+      <p class="label" style="margin-bottom:1.2rem;">Enterprise Risk Governance</p>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.85;max-width:480px;">The world's first enterprise cyber risk operating system — delivering a single-pane-of-glass view of organizational risk through the EISSM Score and the EISSAF Framework.</p>
+      <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+        <a href="https://www.cyberriskarchitecture.com" target="_blank" class="btn btn-gold">Launch Platform</a>
+        <a href="https://cyberiskos.com" target="_blank" class="btn btn-outline">Read the MCRAM Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EISSM SCORE -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="fade-up">
+      <p class="label" style="margin-bottom:1.2rem;">The Score</p>
+      <h2 class="h2">EISSM Score</h2>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s;">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start;" class="score-layout">
+        <div class="score-card">
+          <span class="score-label">Enterprise Score</span>
+          <span class="score-number">734</span>
+          <span class="score-label">Strong Posture</span>
+        </div>
+        <div>
+          <p style="font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;">Just as a credit score gives lenders a single trusted number to assess financial risk, the <strong style="color:var(--gold-light);font-weight:500;">EISSM Score</strong> gives Boards, Regulators, and Risk Managers a single quantified number to assess enterprise cyber risk.</p>
+          <p style="font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;">It eliminates the ambiguity of traditional risk reporting — replacing sprawling risk registers and inconsistent assessments with a clear, defensible, data-driven number that every stakeholder can understand and act on.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+            <span class="pill">Quantified Risk Rating</span>
+            <span class="pill">Board-Ready Reporting</span>
+            <span class="pill">Regulatory Grade</span>
+            <span class="pill">Benchmarkable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EISSAF FRAMEWORK -->
+<section class="content-section">
+  <div style="max-width:1160px;margin:0 auto;padding:0 5vw;">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start;margin-bottom:3rem;" class="content-inner-flex fade-up">
+      <div>
+        <p class="label" style="margin-bottom:1.2rem;">The Framework</p>
+        <h2 class="h2">EISSAF</h2>
+      </div>
+      <div>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.85;">The <strong style="color:var(--gold-light);font-weight:500;">Enterprise Information Systems Security Architectural Framework</strong> is a three-dimensional model spanning 4 layers, 3 perspectives, 4 attributes, and 3 lenses — producing 48 dimensional cells that together define the complete surface of enterprise cyber risk. Codified across 7 volumes and 4,000+ pages in the MCRAM book series by Dr. Wole Akpose.</p>
+      </div>
+    </div>
+
+    <div class="framework-grid fade-up">
+      <div class="framework-dim">
+        <span class="framework-dim-label">Layers</span>
+        <span class="framework-dim-num">4</span>
+        <div class="framework-dim-items">Strategic<br>Business<br>Systems<br>Operational</div>
+      </div>
+      <div class="framework-dim">
+        <span class="framework-dim-label">Perspectives</span>
+        <span class="framework-dim-num">3</span>
+        <div class="framework-dim-items">People<br>Policies<br>Technology</div>
+      </div>
+      <div class="framework-dim">
+        <span class="framework-dim-label">Attributes</span>
+        <span class="framework-dim-num">4</span>
+        <div class="framework-dim-items">Confidentiality<br>Integrity<br>Availability<br>Privacy</div>
+      </div>
+      <div class="framework-dim">
+        <span class="framework-dim-label">Lenses</span>
+        <span class="framework-dim-num">3</span>
+        <div class="framework-dim-items">Threat<br>Defence<br>Impact</div>
+      </div>
+    </div>
+    <div class="total-cell fade-up">4 × 3 × 4 × 3 = 48 Dimensional Cells — The Complete Enterprise Risk Surface</div>
+  </div>
+</section>
+
+<!-- WHO USES IT -->
+<section class="content-section" style="border-bottom:none;">
+  <div style="max-width:1160px;margin:0 auto;padding:0 5vw;">
+    <div style="margin-bottom:3rem;" class="fade-up">
+      <p class="label" style="margin-bottom:1rem;">Who Uses It</p>
+      <h2 class="h2">Built for Every<br>Risk Stakeholder</h2>
+    </div>
+    <div class="users-grid fade-up">
+      <div class="user-item">
+        <div class="user-title">Cyber Risk Analysts</div>
+        <div class="user-desc">Deep-dive into EISSAF dimensional scores, run assessments, and produce structured risk outputs with a rigorous, repeatable methodology.</div>
+      </div>
+      <div class="user-item">
+        <div class="user-title">Risk Managers</div>
+        <div class="user-desc">Monitor the enterprise EISSM Score, track risk posture over time, prioritize remediation, and allocate resources to the highest-impact areas.</div>
+      </div>
+      <div class="user-item">
+        <div class="user-title">Auditors</div>
+        <div class="user-desc">Leverage the EISSAF Framework as a structured audit lens to independently assess and verify enterprise cyber risk posture with defensible evidence.</div>
+      </div>
+      <div class="user-item">
+        <div class="user-title">Boards</div>
+        <div class="user-desc">Receive clear, jargon-free EISSM Score reporting that translates technical cyber risk into the business language boards need for governance oversight.</div>
+      </div>
+      <div class="user-item">
+        <div class="user-title">Regulators</div>
+        <div class="user-desc">Use the EISSM Score as a standardized benchmark for cross-organization risk comparison, regulatory reporting, and sector-wide oversight.</div>
+      </div>
+      <div class="user-item" style="background:var(--steel);display:flex;align-items:center;justify-content:center;">
+        <a href="https://www.cyberriskarchitecture.com" target="_blank" class="btn btn-gold">Access the Platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">6igma<span> Group</span></a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="6igma-health.html">6igma Health</a></li>
+    <li><a href="6igma-associates.html">6igma Associates</a></li>
+    <li><a href="cram-terminals.html">CRAM Terminals</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6igma Health — 6igma Group</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero {
+  padding: 10rem 0 6rem;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: end;
+}
+.breadcrumb {
+  font-family: 'Syne', sans-serif; font-size: 0.68rem;
+  font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
+
+.page-tagline {
+  font-size: 1rem; color: var(--muted); line-height: 1.85; max-width: 480px;
+}
+
+/* product rows */
+.product-section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+.product-inner {
+  max-width: 1160px; margin: 0 auto; padding: 0 5vw;
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 6rem; align-items: start;
+}
+.product-sidebar {}
+.product-sidebar-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; color: transparent;
+  -webkit-text-stroke: 1px rgba(201,168,76,0.2);
+  line-height: 1; display: block; margin-bottom: 0.5rem;
+}
+.product-sidebar-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; letter-spacing: 0.04em;
+  color: var(--white); line-height: 1; display: block;
+  margin-bottom: 0.5rem;
+}
+.product-sidebar-type {
+  font-family: 'Syne', sans-serif; font-size: 0.65rem;
+  font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.product-body { display: flex; flex-direction: column; gap: 2.5rem; }
+.product-desc { font-size: 1rem; color: var(--muted); line-height: 1.85; }
+
+.feature-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border);
+}
+.feature-item {
+  background: var(--black);
+  padding: 1.8rem;
+}
+.feature-item:hover { background: var(--steel); }
+.feature-title {
+  font-family: 'Syne', sans-serif; font-size: 0.8rem;
+  font-weight: 800; color: var(--white); margin-bottom: 0.5rem;
+}
+.feature-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+@media (max-width: 900px) {
+  .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .product-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#companies">Companies</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="fade-up">
+      <div class="breadcrumb"><a href="index.html">6igma Group</a> / 6igma Health</div>
+      <p class="label" style="margin-bottom:1.2rem;">Subsidiary 01</p>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7rem);line-height:0.92;letter-spacing:0.02em;color:var(--white);">6igma<br><span class="gold">Health</span></h1>
+    </div>
+    <div class="fade-up" style="transition-delay:0.15s;">
+      <p class="label" style="margin-bottom:1.2rem;">Health & Wellness Technology</p>
+      <p class="page-tagline">Building consumer and clinical health applications that empower individuals to take charge of their nutrition, holistic wellness, and chronic care — putting evidence-based health tools directly in the hands of users.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FODO -->
+<section class="product-section" id="fodo">
+  <div class="product-inner">
+    <div class="product-sidebar fade-up">
+      <span class="product-sidebar-num">01</span>
+      <span class="product-sidebar-name">FODO</span>
+      <span class="product-sidebar-type">Nutrition App</span>
+    </div>
+    <div class="product-body fade-up" style="transition-delay:0.1s;">
+      <p class="product-desc">FODO is your personal nutrition companion. It helps users track meals, understand macros, set dietary goals, and build sustainable eating habits — all through an intuitive mobile experience. Whether you're managing weight, optimizing athletic performance, or addressing specific dietary needs, FODO puts evidence-based nutrition guidance in your pocket.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-title">Meal Tracking</div>
+          <div class="feature-desc">Log every meal with a comprehensive food database. Scan barcodes or search thousands of foods for fast, accurate logging.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Macro & Calorie Analysis</div>
+          <div class="feature-desc">Real-time breakdown of calories, carbohydrates, protein, and fats. Know exactly what you're consuming and how it maps to your goals.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Dietary Goal Setting</div>
+          <div class="feature-desc">Set personalized targets based on your health objectives — weight loss, muscle gain, maintenance, or condition-specific needs.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Progress Insights</div>
+          <div class="feature-desc">Visual trends, weekly summaries, and actionable recommendations that keep you informed and motivated on your nutrition journey.</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label" style="margin-bottom:1rem;">Key Features</p>
+        <div class="pills">
+          <span class="pill">Meal Logging</span>
+          <span class="pill">Barcode Scanner</span>
+          <span class="pill">Macro Tracking</span>
+          <span class="pill">Calorie Goals</span>
+          <span class="pill">Food Database</span>
+          <span class="pill">Progress Charts</span>
+          <span class="pill">Daily Insights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAFIAKALO -->
+<section class="product-section" id="lafiakalo">
+  <div class="product-inner">
+    <div class="product-sidebar fade-up">
+      <span class="product-sidebar-num">02</span>
+      <span class="product-sidebar-name">LAFIAKALO</span>
+      <span class="product-sidebar-type">Holistic Wellness App</span>
+    </div>
+    <div class="product-body fade-up" style="transition-delay:0.1s;">
+      <p class="product-desc">LAFIAKALO takes a 360° view of wellbeing — integrating mind, body, sleep, stress, and spiritual health into a unified wellness experience. Rooted in the philosophy that true health goes beyond the physical, LAFIAKALO guides users toward balanced living through personalized insights, daily practices, and whole-person care.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-title">Holistic Wellness Score</div>
+          <div class="feature-desc">A single, unified score that reflects the full picture of your wellbeing — mental, physical, spiritual, and restorative health combined.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Mental Health Tracking</div>
+          <div class="feature-desc">Monitor mood, stress levels, and emotional wellbeing over time. Build awareness and healthy mental habits through guided check-ins.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Sleep Analytics</div>
+          <div class="feature-desc">Track sleep quality, duration, and patterns. Receive personalized recommendations to improve rest and recovery.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Daily Wellness Practices</div>
+          <div class="feature-desc">Guided meditations, breathwork, movement prompts, and mindfulness exercises tailored to your current wellness state.</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label" style="margin-bottom:1rem;">Key Features</p>
+        <div class="pills">
+          <span class="pill">Wellness Score</span>
+          <span class="pill">Mood Tracking</span>
+          <span class="pill">Sleep Monitor</span>
+          <span class="pill">Stress Management</span>
+          <span class="pill">Mindfulness</span>
+          <span class="pill">Body Tracking</span>
+          <span class="pill">Spiritual Health</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIALYSIS FLOW -->
+<section class="product-section" id="dialysis-flow" style="border-bottom:none;">
+  <div class="product-inner">
+    <div class="product-sidebar fade-up">
+      <span class="product-sidebar-num">03</span>
+      <span class="product-sidebar-name">Dialysis Flow</span>
+      <span class="product-sidebar-type">Dialysis Session App</span>
+    </div>
+    <div class="product-body fade-up" style="transition-delay:0.1s;">
+      <p class="product-desc">Dialysis Flow is a dedicated mobile companion for dialysis patients. It helps patients log and track individual dialysis sessions, monitor vitals, record symptoms, manage fluid intake between sessions, and share session reports with their care team — putting patients in control of their treatment journey and improving clinical communication.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-title">Session Logging</div>
+          <div class="feature-desc">Record every dialysis session with detailed notes on duration, machine settings, and how you felt before and after treatment.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Vitals Tracking</div>
+          <div class="feature-desc">Log blood pressure, heart rate, weight, and temperature pre- and post-session to build a comprehensive clinical picture over time.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Fluid Intake Monitor</div>
+          <div class="feature-desc">Track daily fluid consumption against your prescribed limit. Get gentle reminders to stay within safe intake targets between sessions.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-title">Care Team Reports</div>
+          <div class="feature-desc">Generate and share structured session summaries directly with your nephrologist or dialysis care team for better-informed clinical decisions.</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label" style="margin-bottom:1rem;">Key Features</p>
+        <div class="pills">
+          <span class="pill">Session Logging</span>
+          <span class="pill">Vitals Tracking</span>
+          <span class="pill">Fluid Intake Monitor</span>
+          <span class="pill">Symptom Journal</span>
+          <span class="pill">Care Team Reports</span>
+          <span class="pill">Trend Charts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">6igma<span> Group</span></a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="6igma-associates.html">6igma Associates</a></li>
+    <li><a href="cyberrisk-os.html">Cyber Risk OS</a></li>
+    <li><a href="cram-terminals.html">CRAM Terminals</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
