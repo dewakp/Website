@@ -3,306 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>6igma Group</title>
-<link rel="stylesheet" href="style.css">
+<title>6igma Group — 6igma Group</title>
 <style>
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  position: relative;
-  padding-top: 6rem;
-  overflow: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+:root{--black:#07090E;--white:#EEF0F5;--gold:#C9A84C;--gold-light:#E2C47A;--gold-dim:rgba(201,168,76,0.12);--steel:#111722;--steel-mid:#1C2538;--muted:#68788F;--text:#B8C4D8;--border:rgba(201,168,76,0.14);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;min-height:100vh;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+nav{position:sticky;top:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(7,9,14,0.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:0.1em;color:var(--gold);text-decoration:none;}
+.nav-logo span{color:var(--white);}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:0.55rem 1.3rem;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold-light);}
+.page-wrap{max-width:1160px;margin:0 auto;padding:0 5vw;}
+.label{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.8rem;}
+.label::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0;}
+h1,.h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7.5rem);line-height:0.95;letter-spacing:0.03em;color:var(--white);}
+h2,.h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,4rem);line-height:1;letter-spacing:0.03em;color:var(--white);}
+h3,.h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--white);}
+p{color:var(--text);line-height:1.8;}
+.lead{font-size:1.05rem;color:var(--muted);line-height:1.85;}
+.gold{color:var(--gold);}
+.btn{display:inline-flex;align-items:center;gap:0.6rem;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.22s;cursor:pointer;border:none;}
+.btn-gold{color:var(--black);background:var(--gold);padding:0.9rem 2rem;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{color:var(--gold);border:1px solid var(--border);padding:0.9rem 2rem;background:transparent;}
+.btn-outline:hover{border-color:var(--gold);background:var(--gold-dim);}
+.btn-ghost{color:var(--gold);padding:0;background:transparent;}
+.btn-ghost::after{content:' →';}
+.btn-ghost:hover{color:var(--gold-light);}
+.divider{height:1px;background:var(--border);margin:0;}
+.pill{display:inline-block;font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border:1px solid var(--border);color:var(--gold-light);background:var(--gold-dim);}
+footer{border-top:1px solid var(--border);padding:3rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.1em;color:var(--gold);text-decoration:none;}
+.footer-logo span{color:var(--white);}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:0.75rem;color:var(--muted);width:100%;text-align:center;padding-top:1rem;border-top:1px solid var(--border);margin-top:0.5rem;}
+.fade-up{opacity:1;transform:none;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-field{display:flex;flex-direction:column;gap:0.4rem;}
+.form-field label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+.form-field input,.form-field textarea,.form-field select{background:var(--steel);border:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.8rem 1rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;width:100%;}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold);}
+.form-field select option{background:var(--steel);}
+.form-field textarea{min-height:110px;resize:vertical;}
+@media(max-width:900px){nav{padding:1rem 4vw;}.nav-links{gap:1rem;}footer{flex-direction:column;align-items:flex-start;}.form-row{grid-template-columns:1fr;}}
+@media(max-width:640px){.nav-links{display:none;}}
 
-.hero-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.05) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 50% at 10% 70%, rgba(201,168,76,0.04) 0%, transparent 60%);
-}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:5rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(201,168,76,0.05) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 10% 70%,rgba(201,168,76,0.04) 0%,transparent 60%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 20%,transparent 75%);}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;width:100%;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,8.5rem);line-height:0.92;letter-spacing:0.02em;color:var(--white);margin-bottom:2rem;}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.85;max-width:440px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;}
+.hero-index{display:flex;flex-direction:column;border:1px solid var(--border);}
+.hero-index-item{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.8rem;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;position:relative;overflow:hidden;}
+.hero-index-item:last-child{border-bottom:none;}
+.hero-index-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s ease;}
+.hero-index-item:hover{background:var(--steel);}
+.hero-index-item:hover::before{transform:scaleY(1);}
+.hero-index-left{display:flex;flex-direction:column;gap:0.3rem;}
+.hero-index-num{font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.2em;color:var(--muted);}
+.hero-index-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.05em;color:var(--white);line-height:1;}
+.hero-index-tag{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.hero-index-arrow{font-size:1rem;color:var(--gold);opacity:0;transform:translateX(-8px);transition:all 0.2s;}
+.hero-index-item:hover .hero-index-arrow{opacity:1;transform:translateX(0);}
+.about-strip{padding:6rem 0;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start;}
+.about-body{display:flex;flex-direction:column;gap:1.2rem;}
+.about-body p{font-size:1rem;color:var(--muted);line-height:1.85;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border);margin-bottom:6rem;}
+.stat{padding:2.5rem 2rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1;display:block;margin-bottom:0.4rem;}
+.stat-l{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.companies-section{padding:6rem 0;}
+.companies-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);}
+.company-card{background:var(--black);padding:3rem;text-decoration:none;display:block;position:relative;transition:background 0.25s;overflow:hidden;}
+.company-card:hover{background:var(--steel);}
+.company-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;}
+.company-card-num{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.2em;color:var(--muted);}
+.company-card-sector{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding:0.3rem 0.8rem;border:1px solid var(--border);}
+.company-card-name{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;letter-spacing:0.04em;color:var(--white);line-height:1;margin-bottom:1rem;display:block;}
+.company-card-desc{font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:2rem;}
+.company-card-products{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;}
+.company-card-link{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.5rem;transition:gap 0.2s;}
+.company-card:hover .company-card-link{gap:0.9rem;}
+.company-card-bg{position:absolute;bottom:-1.5rem;right:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:9rem;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.05);line-height:1;pointer-events:none;user-select:none;}
+.contact-strip{padding:6rem 0;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;border-top:1px solid var(--border);}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem;}.about-strip{grid-template-columns:1fr;gap:2rem;}.stats{grid-template-columns:repeat(2,1fr);}.companies-grid{grid-template-columns:1fr;}.contact-strip{grid-template-columns:1fr;gap:3rem;}}
 
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, black 20%, transparent 75%);
-}
-
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1160px; margin: 0 auto;
-  padding: 0 5vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-content .label { margin-bottom: 1.8rem; }
-
-.hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 8vw, 8.5rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  margin-bottom: 2rem;
-}
-.hero-title .gold { display: block; }
-
-.hero-sub {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.85;
-  max-width: 440px;
-  margin-bottom: 2.5rem;
-}
-
-.hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
-
-/* Right side — subsidiary index */
-.hero-index {
-  display: flex; flex-direction: column;
-  gap: 0;
-  border: 1px solid var(--border);
-}
-
-.hero-index-item {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.4rem 1.8rem;
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-  transition: background 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-.hero-index-item:last-child { border-bottom: none; }
-.hero-index-item::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 2px; background: var(--gold);
-  transform: scaleY(0); transform-origin: bottom;
-  transition: transform 0.3s ease;
-}
-.hero-index-item:hover { background: var(--steel); }
-.hero-index-item:hover::before { transform: scaleY(1); }
-
-.hero-index-left { display: flex; flex-direction: column; gap: 0.3rem; }
-.hero-index-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-}
-.hero-index-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  line-height: 1;
-}
-.hero-index-tag {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.hero-index-arrow {
-  font-size: 1rem;
-  color: var(--gold);
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: all 0.2s;
-}
-.hero-index-item:hover .hero-index-arrow {
-  opacity: 1; transform: translateX(0);
-}
-
-/* ── ABOUT STRIP ── */
-.about-strip {
-  padding: 6rem 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 6rem;
-  align-items: start;
-}
-
-.about-body { display: flex; flex-direction: column; gap: 1.2rem; }
-.about-body p { font-size: 1rem; color: var(--muted); line-height: 1.85; }
-
-/* ── STATS ── */
-.stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
-  margin-bottom: 6rem;
-}
-.stat {
-  padding: 2.5rem 2rem;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.stat-n {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  color: var(--gold);
-  line-height: 1;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-.stat-l {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-/* ── COMPANIES GRID ── */
-.companies-section { padding: 6rem 0; }
-.companies-section .label { margin-bottom: 1rem; }
-.companies-section .h2 { margin-bottom: 4rem; }
-
-.companies-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
-}
-
-.company-card {
-  background: var(--black);
-  padding: 3rem;
-  text-decoration: none;
-  display: block;
-  position: relative;
-  transition: background 0.25s;
-  overflow: hidden;
-}
-.company-card:hover { background: var(--steel); }
-
-.company-card-top {
-  display: flex; justify-content: space-between;
-  align-items: flex-start; margin-bottom: 2rem;
-}
-.company-card-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  color: var(--muted);
-}
-.company-card-sector {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding: 0.3rem 0.8rem;
-  border: 1px solid var(--border);
-}
-.company-card-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.6rem;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 1rem;
-  display: block;
-}
-.company-card-desc {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.75;
-  margin-bottom: 2rem;
-}
-.company-card-products {
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-.company-card-link {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: flex; align-items: center; gap: 0.5rem;
-  transition: gap 0.2s;
-}
-.company-card:hover .company-card-link { gap: 0.9rem; }
-.company-card-bg {
-  position: absolute;
-  bottom: -1.5rem; right: 1.5rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 9rem;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(201,168,76,0.05);
-  line-height: 1;
-  pointer-events: none; user-select: none;
-}
-
-/* ── CONTACT ── */
-.contact-strip {
-  padding: 6rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-  border-top: 1px solid var(--border);
-}
-
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-field label {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold);
-}
-.form-field input,
-.form-field textarea,
-.form-field select {
-  background: var(--steel);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  padding: 0.8rem 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-  -webkit-appearance: none;
-  width: 100%;
-}
-.form-field input:focus,
-.form-field textarea:focus,
-.form-field select:focus { border-color: var(--gold); }
-.form-field select option { background: var(--steel); }
-.form-field textarea { min-height: 110px; resize: vertical; }
-
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .about-strip { grid-template-columns: 1fr; gap: 2rem; }
-  .stats { grid-template-columns: repeat(2,1fr); }
-  .companies-grid { grid-template-columns: 1fr; }
-  .contact-strip { grid-template-columns: 1fr; gap: 3rem; }
-  .form-row { grid-template-columns: 1fr; }
-}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#companies">Companies</a></li>
     <li><a href="about.html">Dr. Akpose</a></li>
     <li><a href="careers.html">Careers</a></li>
@@ -311,175 +114,100 @@
   <a href="index.html#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-content fade-up">
-      <p class="label">6igma Group</p>
-      <h1 class="hero-title">
-        Precision<br>
-        at Every<br>
-        <span class="gold">Sigma.</span>
-      </h1>
+      <p class="label" style="margin-bottom:1.6rem;">6igma Group</p>
+      <h1 class="hero-title">Precision<br>at Every<br><span class="gold">Sigma.</span></h1>
       <p class="hero-sub">A diversified group of companies operating at the forefront of healthcare technology, cybersecurity, risk intelligence, and strategic consulting.</p>
       <div class="hero-actions">
         <a href="#companies" class="btn btn-gold">Our Companies</a>
         <a href="#about" class="btn btn-ghost">About the Group</a>
       </div>
     </div>
-
-    <div class="hero-index fade-up" style="transition-delay:0.2s;">
+    <div class="hero-index fade-up" style="transition-delay:0.15s;">
       <a href="6igma-health.html" class="hero-index-item">
-        <div class="hero-index-left">
-          <span class="hero-index-num">01</span>
-          <span class="hero-index-name">6igma Health</span>
-          <span class="hero-index-tag">Health & Wellness Technology</span>
-        </div>
+        <div class="hero-index-left"><span class="hero-index-num">01</span><span class="hero-index-name">6igma Health</span><span class="hero-index-tag">Health & Wellness Technology</span></div>
         <span class="hero-index-arrow">→</span>
       </a>
       <a href="6igma-associates.html" class="hero-index-item">
-        <div class="hero-index-left">
-          <span class="hero-index-num">02</span>
-          <span class="hero-index-name">6igma Associates</span>
-          <span class="hero-index-tag">Management Consulting</span>
-        </div>
+        <div class="hero-index-left"><span class="hero-index-num">02</span><span class="hero-index-name">6igma Associates</span><span class="hero-index-tag">Management Consulting</span></div>
         <span class="hero-index-arrow">→</span>
       </a>
       <a href="cyberrisk-os.html" class="hero-index-item">
-        <div class="hero-index-left">
-          <span class="hero-index-num">03</span>
-          <span class="hero-index-name">CyberRisk Architecture OS</span>
-          <span class="hero-index-tag">Enterprise Risk Governance</span>
-        </div>
+        <div class="hero-index-left"><span class="hero-index-num">03</span><span class="hero-index-name">CyberRisk Architecture OS</span><span class="hero-index-tag">Enterprise Risk Governance</span></div>
         <span class="hero-index-arrow">→</span>
       </a>
       <a href="cram-terminals.html" class="hero-index-item">
-        <div class="hero-index-left">
-          <span class="hero-index-num">04</span>
-          <span class="hero-index-name">CRAM Terminals</span>
-          <span class="hero-index-tag">Cyber Risk Intelligence</span>
-        </div>
+        <div class="hero-index-left"><span class="hero-index-num">04</span><span class="hero-index-name">CRAM Terminals</span><span class="hero-index-tag">Cyber Risk Intelligence</span></div>
         <span class="hero-index-arrow">→</span>
       </a>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- ── ABOUT ── -->
 <div id="about" class="page-wrap">
   <div class="about-strip">
     <div class="fade-up">
       <p class="label" style="margin-bottom:1.2rem;">Who We Are</p>
       <h2 class="h2">Built on Six Sigma Principles</h2>
     </div>
-    <div class="about-body fade-up" style="transition-delay:0.15s;">
+    <div class="about-body fade-up" style="transition-delay:0.1s;">
       <p>6igma Group is an umbrella organization uniting four focused companies — each operating at the frontier of their respective industries. We are unified by a single standard: precision, performance, and measurable impact at every level.</p>
       <p>From apps that improve everyday health to platforms that quantify enterprise cyber risk, every 6igma company is built to solve real problems with rigorous methodology and excellent execution.</p>
     </div>
   </div>
-
   <div class="stats fade-up">
-    <div class="stat">
-      <span class="stat-n">4</span>
-      <span class="stat-l">Subsidiary Companies</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">7+</span>
-      <span class="stat-l">Products & Platforms</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">3</span>
-      <span class="stat-l">Industry Sectors</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">Σ</span>
-      <span class="stat-l">Sigma Standard</span>
-    </div>
+    <div class="stat"><span class="stat-n">4</span><span class="stat-l">Subsidiary Companies</span></div>
+    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Products & Platforms</span></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">Industry Sectors</span></div>
+    <div class="stat"><span class="stat-n">Σ</span><span class="stat-l">Sigma Standard</span></div>
   </div>
 </div>
-
 <div class="divider"></div>
-
-<!-- ── COMPANIES ── -->
 <section id="companies" class="page-wrap">
   <div class="companies-section">
     <p class="label fade-up">Our Companies</p>
-    <h2 class="h2 fade-up" style="transition-delay:0.1s;">Four Companies,<br>One Vision</h2>
-
+    <h2 class="h2 fade-up" style="transition-delay:0.1s;margin-bottom:3.5rem;">Four Companies,<br>One Vision</h2>
     <div class="companies-grid">
-
       <a href="6igma-health.html" class="company-card fade-up">
-        <div class="company-card-top">
-          <span class="company-card-num">01</span>
-          <span class="company-card-sector">Health & Wellness</span>
-        </div>
+        <div class="company-card-top"><span class="company-card-num">01</span><span class="company-card-sector">Health & Wellness</span></div>
         <span class="company-card-name">6igma Health</span>
         <p class="company-card-desc">Building consumer and clinical health apps that empower individuals to take charge of their nutrition, holistic wellness, and chronic care management.</p>
-        <div class="company-card-products">
-          <span class="pill">FODO</span>
-          <span class="pill">LAFIAKALO</span>
-          <span class="pill">Dialysis Flow</span>
-        </div>
+        <div class="company-card-products"><span class="pill">FODO</span><span class="pill">LAFIAKALO</span><span class="pill">Dialysis Flow</span></div>
         <span class="company-card-link">Explore 6igma Health →</span>
         <div class="company-card-bg">01</div>
       </a>
-
       <a href="6igma-associates.html" class="company-card fade-up" style="transition-delay:0.1s;">
-        <div class="company-card-top">
-          <span class="company-card-num">02</span>
-          <span class="company-card-sector">Consulting</span>
-        </div>
+        <div class="company-card-top"><span class="company-card-num">02</span><span class="company-card-sector">Consulting</span></div>
         <span class="company-card-name">6igma Associates</span>
         <p class="company-card-desc">A premier management consulting firm providing executive-level strategic advisory services. We partner with organizations to drive transformation and unlock competitive advantage.</p>
-        <div class="company-card-products">
-          <span class="pill">CxO</span>
-        </div>
+        <div class="company-card-products"><span class="pill">CxO</span></div>
         <span class="company-card-link">Explore 6igma Associates →</span>
         <div class="company-card-bg">02</div>
       </a>
-
       <a href="cyberrisk-os.html" class="company-card fade-up" style="transition-delay:0.15s;">
-        <div class="company-card-top">
-          <span class="company-card-num">03</span>
-          <span class="company-card-sector">Cybersecurity</span>
-        </div>
+        <div class="company-card-top"><span class="company-card-num">03</span><span class="company-card-sector">Cybersecurity</span></div>
         <span class="company-card-name">CyberRisk Architecture OS</span>
-        <p class="company-card-desc">The enterprise cyber risk operating system. A single-pane-of-glass platform delivering the EISSM Score — the credit score equivalent for enterprise cyber risk — powered by the EISSAF Framework.</p>
-        <div class="company-card-products">
-          <span class="pill">EISSM Score</span>
-          <span class="pill">EISSAF Framework</span>
-        </div>
+        <p class="company-card-desc">The enterprise cyber risk operating system delivering the EISSM Score — the credit score equivalent for enterprise cyber risk — powered by the EISSAF Framework.</p>
+        <div class="company-card-products"><span class="pill">EISSM Score</span><span class="pill">EISSAF Framework</span></div>
         <span class="company-card-link">Explore Cyber Risk OS →</span>
         <div class="company-card-bg">03</div>
       </a>
-
       <a href="cram-terminals.html" class="company-card fade-up" style="transition-delay:0.2s;">
-        <div class="company-card-top">
-          <span class="company-card-num">04</span>
-          <span class="company-card-sector">Risk Intelligence</span>
-        </div>
+        <div class="company-card-top"><span class="company-card-num">04</span><span class="company-card-sector">Risk Intelligence</span></div>
         <span class="company-card-name">CRAM Terminals</span>
-        <p class="company-card-desc">Bloomberg meets Reddit — for cyber risk professionals. Real-time risk data, live EISSM scoring, threat intelligence, and a professional community network in one terminal.</p>
-        <div class="company-card-products">
-          <span class="pill">Live Risk Feeds</span>
-          <span class="pill">Pro Community</span>
-          <span class="pill">Threat Intel</span>
-        </div>
+        <p class="company-card-desc">Bloomberg meets Reddit — for cyber risk professionals. Real-time risk data, live EISSM scoring, threat intelligence, and a professional community in one terminal.</p>
+        <div class="company-card-products"><span class="pill">Live Risk Feeds</span><span class="pill">Pro Community</span><span class="pill">Threat Intel</span></div>
         <span class="company-card-link">Explore CRAM Terminals →</span>
         <div class="company-card-bg">04</div>
       </a>
-
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- ── CONTACT ── -->
 <div id="contact" class="page-wrap">
   <div class="contact-strip">
     <div class="fade-up">
@@ -488,37 +216,26 @@
       <p class="lead">Interested in partnering with 6igma Group or one of our subsidiaries? Reach out and let's explore how we can create value together.</p>
       <div style="margin-top:2rem;padding:1.8rem 2rem;background:var(--steel);border:1px solid var(--border);">
         <p class="label" style="margin-bottom:0.8rem;">Email Us Directly</p>
-        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--gold);display:block;margin-bottom:0.4rem;user-select:all;">hello [at] 6igma.com</span>
-        <p style="font-size:0.82rem;color:var(--muted);">For careers: <span style="color:var(--gold-light);user-select:all;">careers [at] 6igma.com</span></p>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;color:var(--gold);display:block;margin-bottom:0.4rem;">hello [at] 6igma.com</span>
+        <p style="font-size:0.82rem;color:var(--muted);">For investors: investors [at] 6igma.com</p>
+        <p style="font-size:0.82rem;color:var(--muted);">For careers: careers [at] 6igma.com</p>
       </div>
     </div>
     <form class="contact-form fade-up" style="transition-delay:0.15s;" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleContact(event)">
       <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="bot-field" style="display:none">
+      <p style="display:none;"><input name="bot-field"></p>
       <div class="form-row">
-        <div class="form-field">
-          <label>First Name</label>
-          <input type="text" name="first-name" placeholder="Jane" required>
-        </div>
-        <div class="form-field">
-          <label>Last Name</label>
-          <input type="text" name="last-name" placeholder="Doe" required>
-        </div>
+        <div class="form-field"><label>First Name</label><input type="text" name="first-name" placeholder="Jane" required></div>
+        <div class="form-field"><label>Last Name</label><input type="text" name="last-name" placeholder="Doe" required></div>
       </div>
       <div class="form-row">
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="jane@company.com" required>
-        </div>
-        <div class="form-field">
-          <label>Company</label>
-          <input type="text" name="company" placeholder="Your Company">
-        </div>
+        <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="jane@company.com" required></div>
+        <div class="form-field"><label>Company</label><input type="text" name="company" placeholder="Your Company"></div>
       </div>
       <div class="form-field">
         <label>Area of Interest</label>
         <select name="interest">
-          <option value="">Select a company or product...</option>
+          <option value="">Select...</option>
           <option>6igma Group (General)</option>
           <option>Investor Relations</option>
           <option>6igma Health — FODO</option>
@@ -529,11 +246,8 @@
           <option>CRAM Terminals</option>
         </select>
       </div>
-      <div class="form-field">
-        <label>Message</label>
-        <textarea name="message" placeholder="Tell us about your inquiry..." required></textarea>
-      </div>
-      <button type="submit" class="btn btn-gold" id="contact-btn" style="align-self:flex-start;">Send Message</button>
+      <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell us about your inquiry..." required></textarea></div>
+      <button type="submit" id="contact-btn" class="btn btn-gold" style="align-self:flex-start;">Send Message</button>
     </form>
   </div>
 </div>
@@ -551,39 +265,34 @@
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
-</footer><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</footer>
+<script>
 (function(){
-  var elems = document.querySelectorAll(".fade-up");
-  function checkVisible(el) {
-    var r = el.getBoundingClientRect();
-    return r.top < window.innerHeight && r.bottom >= 0;
-  }
-  function revealAll() {
-    elems.forEach(function(el) {
-      if (checkVisible(el)) el.classList.add("visible");
+  function revealAll(){
+    document.querySelectorAll('.fade-up').forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom >= 0) el.classList.add('visible');
     });
   }
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
     });
-  }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
-  elems.forEach(function(el) { obs.observe(el); });
+  },{threshold:0,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
   revealAll();
-  setTimeout(revealAll, 50);
-  window.addEventListener("load", revealAll);
+  setTimeout(revealAll,80);
+  window.addEventListener('load',revealAll);
 })();
 
 function handleContact(e) {
   e.preventDefault();
-  var form = e.target;
-  var btn = document.getElementById("contact-btn");
-  var data = new FormData(form);
-  btn.textContent = "Sending...";
-  btn.disabled = true;
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(data).toString()
-  })
-  .the
+  var form = e.target, btn = document.getElementById('contact-btn');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(form)).toString()})
+  .then(function(){ btn.textContent = 'Sent ✓'; btn.style.background='#4ADFAF'; btn.style.color='#07090E'; form.reset(); })
+  .catch(function(){ btn.textContent = 'Send Message'; btn.disabled = false; });
+}
+</script>
+</body>
+</html>

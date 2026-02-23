@@ -230,16 +230,7 @@ footer {
 }
 
 /* ── ANIMATIONS ── */
-.fade-up {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-  will-change: opacity, transform;
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-up { opacity: 1; transform: none; }
 
 @media (max-width: 768px) {
   nav { padding: 1rem 4vw; }
