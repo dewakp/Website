@@ -236,13 +236,31 @@
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
-</footer>
-
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</footer><script>
+(function(){
+  var elems = document.querySelectorAll(".fade-up");
+  // Immediately show elements already in viewport on load
+  function checkVisible(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom >= 0;
+  }
+  function revealAll() {
+    elems.forEach(function(el) {
+      if (checkVisible(el)) el.classList.add("visible");
+    });
+  }
+  // IntersectionObserver for elements below fold
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
+  elems.forEach(function(el) { obs.observe(el); });
+  // Run on load and after a tick to catch above-fold
+  revealAll();
+  setTimeout(revealAll, 50);
+  window.addEventListener("load", revealAll);
+})();
 </script>
 </body>
 </html>
