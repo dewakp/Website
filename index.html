@@ -303,11 +303,12 @@
 <nav>
   <a href="index.html" class="nav-logo">6igma<span> Group</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#companies">Companies</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html#companies">Companies</a></li>
+    <li><a href="about.html">Dr. Akpose</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get in Touch</a>
+  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -487,8 +488,8 @@
       <p class="lead">Interested in partnering with 6igma Group or one of our subsidiaries? Reach out and let's explore how we can create value together.</p>
       <div style="margin-top:2rem;padding:1.8rem 2rem;background:var(--steel);border:1px solid var(--border);">
         <p class="label" style="margin-bottom:0.8rem;">Email Us Directly</p>
-        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--gold);display:block;margin-bottom:0.4rem;user-select:all;">hello@6igma.com</span>
-        <p style="font-size:0.82rem;color:var(--muted);">For careers: <span style="color:var(--gold-light);user-select:all;">careers@6igma.com</span></p>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;color:var(--gold);display:block;margin-bottom:0.4rem;user-select:all;">hello [at] 6igma.com</span>
+        <p style="font-size:0.82rem;color:var(--muted);">For careers: <span style="color:var(--gold-light);user-select:all;">careers [at] 6igma.com</span></p>
       </div>
     </div>
     <form class="contact-form fade-up" style="transition-delay:0.15s;" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleContact(event)">
@@ -540,14 +541,17 @@
 <footer>
   <a href="index.html" class="footer-logo">6igma<span> Group</span></a>
   <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="6igma-health.html">6igma Health</a></li>
     <li><a href="6igma-associates.html">6igma Associates</a></li>
     <li><a href="cyberrisk-os.html">Cyber Risk OS</a></li>
     <li><a href="cram-terminals.html">CRAM Terminals</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.html">Dr. Akpose</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <p class="footer-copy">© 2026 6igma.com · 6igma Group. All rights reserved.</p>
-</footer><script>
+</footer><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   var elems = document.querySelectorAll(".fade-up");
   function checkVisible(el) {
@@ -582,18 +586,4 @@ function handleContact(e) {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(data).toString()
   })
-  .then(function() {
-    btn.textContent = "Message Sent ✓";
-    btn.style.background = "#4ADFAF";
-    btn.style.color = "#07090E";
-    form.reset();
-  })
-  .catch(function() {
-    btn.textContent = "Send Message";
-    btn.disabled = false;
-    alert("Something went wrong. Please email hello@6igma.com directly.");
-  });
-}
-</script>
-</body>
-</html>
+  .the
