@@ -476,14 +476,16 @@
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.65;">Include your role of interest, a brief intro, and anything you're proud of. A polished CV is welcome but never required — show us your work.</p>
       </div>
     </div>
-    <form class="apply-form fade-up" style="transition-delay:0.15s;" onsubmit="handleApply(event)">
+    <form class="apply-form fade-up" style="transition-delay:0.15s;" name="careers" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleApply(event)">
+      <input type="hidden" name="form-name" value="careers">
+      <input type="hidden" name="bot-field" style="display:none">
       <div class="form-row">
-        <div class="form-field"><label>First Name</label><input type="text" placeholder="Jane" required></div>
-        <div class="form-field"><label>Last Name</label><input type="text" placeholder="Doe" required></div>
+        <div class="form-field"><label>First Name</label><input type="text" name="first-name" placeholder="Jane" required></div>
+        <div class="form-field"><label>Last Name</label><input type="text" name="last-name" placeholder="Doe" required></div>
       </div>
-      <div class="form-field"><label>Email Address</label><input type="email" placeholder="jane@example.com" required></div>
+      <div class="form-field"><label>Email Address</label><input type="email" name="email" placeholder="jane@example.com" required></div>
       <div class="form-field"><label>Role of Interest</label>
-        <select required>
+        <select name="role" required>
           <option value="">Select a role...</option>
           <option>Creative Engineer — Software / Mobile</option>
           <option>Creative Engineer — Platform / AI</option>
@@ -493,17 +495,17 @@
           <option>Other — I'll explain below</option>
         </select>
       </div>
-      <div class="form-field"><label>LinkedIn or Portfolio URL</label><input type="url" placeholder="https://"></div>
+      <div class="form-field"><label>LinkedIn or Portfolio URL</label><input type="url" name="portfolio" placeholder="https://"></div>
       <div class="form-field">
         <label>Why 6igma Group? What have you built?</label>
-        <textarea placeholder="Tell us about yourself, what you've built or achieved, and why you want to work here. Be real — we prefer honest over polished." required></textarea>
+        <textarea name="message" placeholder="Tell us about yourself, what you've built or achieved, and why you want to work here. Be real — we prefer honest over polished." required></textarea>
       </div>
       <label class="file-upload">
         <input type="file" accept=".pdf,.doc,.docx">
         <span class="file-upload-label">Attach CV / Resume (optional)</span>
         <span class="file-upload-sub">PDF or Word · Max 10MB</span>
       </label>
-      <button type="submit" class="btn btn-gold" style="align-self:flex-start;padding:1rem 2.5rem;">Submit Application</button>
+      <button type="submit" class="btn btn-gold" id="apply-btn" style="align-self:flex-start;padding:1rem 2.5rem;">Submit Application</button>
     </form>
   </div>
 </section>
@@ -544,6 +546,30 @@
   setTimeout(revealAll, 50);
   window.addEventListener("load", revealAll);
 })();
+function handleApply(e) {
+    e.preventDefault();
+    var form = e.target;
+    var btn = document.getElementById("apply-btn");
+    var data = new FormData(form);
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(function() {
+      btn.textContent = "Application Sent ✓";
+      btn.style.background = "#4ADFAF";
+      btn.style.color = "#07090E";
+      form.reset();
+    })
+    .catch(function() {
+      btn.textContent = "Submit Application";
+      btn.disabled = false;
+      alert("Something went wrong. Please email careers@6igma.com directly.");
+    });
+  }
 </script>
 </body>
 </html>

@@ -491,32 +491,35 @@
         <p style="font-size:0.82rem;color:var(--muted);">For careers: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="274446554242555467114e404a460944484a">[email&#160;protected]</a></p>
       </div>
     </div>
-    <form class="contact-form fade-up" style="transition-delay:0.15s;" onsubmit="return false;">
+    <form class="contact-form fade-up" style="transition-delay:0.15s;" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleContact(event)">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="hidden" name="bot-field" style="display:none">
       <div class="form-row">
         <div class="form-field">
           <label>First Name</label>
-          <input type="text" placeholder="Jane">
+          <input type="text" name="first-name" placeholder="Jane" required>
         </div>
         <div class="form-field">
           <label>Last Name</label>
-          <input type="text" placeholder="Doe">
+          <input type="text" name="last-name" placeholder="Doe" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label>Email</label>
-          <input type="email" placeholder="jane@company.com">
+          <input type="email" name="email" placeholder="jane@company.com" required>
         </div>
         <div class="form-field">
           <label>Company</label>
-          <input type="text" placeholder="Your Company">
+          <input type="text" name="company" placeholder="Your Company">
         </div>
       </div>
       <div class="form-field">
         <label>Area of Interest</label>
-        <select>
+        <select name="interest">
           <option value="">Select a company or product...</option>
           <option>6igma Group (General)</option>
+          <option>Investor Relations</option>
           <option>6igma Health — FODO</option>
           <option>6igma Health — LAFIAKALO</option>
           <option>6igma Health — Dialysis Flow</option>
@@ -527,9 +530,9 @@
       </div>
       <div class="form-field">
         <label>Message</label>
-        <textarea placeholder="Tell us about your inquiry..."></textarea>
+        <textarea name="message" placeholder="Tell us about your inquiry..." required></textarea>
       </div>
-      <button type="submit" class="btn btn-gold" style="align-self:flex-start;">Send Message</button>
+      <button type="submit" class="btn btn-gold" id="contact-btn" style="align-self:flex-start;">Send Message</button>
     </form>
   </div>
 </div>
@@ -547,7 +550,6 @@
 </footer><script>
 (function(){
   var elems = document.querySelectorAll(".fade-up");
-  // Immediately show elements already in viewport on load
   function checkVisible(el) {
     var r = el.getBoundingClientRect();
     return r.top < window.innerHeight && r.bottom >= 0;
@@ -557,18 +559,41 @@
       if (checkVisible(el)) el.classList.add("visible");
     });
   }
-  // IntersectionObserver for elements below fold
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
     });
   }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
   elems.forEach(function(el) { obs.observe(el); });
-  // Run on load and after a tick to catch above-fold
   revealAll();
   setTimeout(revealAll, 50);
   window.addEventListener("load", revealAll);
 })();
+
+function handleContact(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById("contact-btn");
+  var data = new FormData(form);
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(function() {
+    btn.textContent = "Message Sent ✓";
+    btn.style.background = "#4ADFAF";
+    btn.style.color = "#07090E";
+    form.reset();
+  })
+  .catch(function() {
+    btn.textContent = "Send Message";
+    btn.disabled = false;
+    alert("Something went wrong. Please email hello@6igma.com directly.");
+  });
+}
 </script>
 </body>
 </html>
